@@ -1,3 +1,5 @@
+require "actionpack/action_caching"
+
 class ContentController < ApplicationController
 
   caches_action :meetings, expires_in: 2.hours
@@ -30,9 +32,12 @@ class ContentController < ApplicationController
 
   protected
     def load_meetings
-      @meetings         = MeetupEvent.get_next_month_events['results']
-      @next_meeting     = @meetings.first
-      @coming_meetings  = @meetings[1..-1]
+      @meetings           = MeetupEvent.get_next_month_events['results']
+      @next_meeting       = @meetings.first
+      @coming_meetings    = @meetings[1..-1]
+      gon.meetings        = @meetings
+      #gon.next_meeting    = @next_meeting
+      #gon.coming_meetings = @coming_meetings
     end
 
     def load_videos

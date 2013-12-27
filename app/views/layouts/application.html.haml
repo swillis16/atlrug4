@@ -3,10 +3,14 @@
     %title Atlanta Ruby Users' Group
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    = include_gon
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Roboto+Slab:400,700"
     = stylesheet_link_tag    "//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css"
+    = stylesheet_link_tag    "//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css"
+    = stylesheet_link_tag    "//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.print.css"
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js"
     = csrf_meta_tag
 
   %body
